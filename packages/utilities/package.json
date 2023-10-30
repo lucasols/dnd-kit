@@ -1,6 +1,6 @@
 {
   "name": "@lucasols/dnd-kit-utilities",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "Internal utilities to bee shared between `@dnd-kit` packages",
   "author": "Claudéric Demers",
   "license": "MIT",
