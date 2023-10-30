@@ -16,8 +16,8 @@ import {
   useLatestValue,
   useIsomorphicLayoutEffect,
   useUniqueId,
-} from '@dnd-kit/utilities';
-import type {Transform} from '@dnd-kit/utilities';
+} from '@lucasols/dnd-kit-utilities';
+import type {Transform} from '@lucasols/dnd-kit-utilities';
 
 import {
   Action,
@@ -256,6 +256,11 @@ export const DndContext = memo(function DndContext({
   );
   const scrollableAncestorRects = useRects(scrollableAncestors);
 
+  const scrollableAncestorRectsRects = useMemo(
+    () => scrollableAncestorRects.map(({rect}) => rect),
+    [scrollableAncestorRects]
+  );
+
   // Apply modifiers
   const modifiedTranslate = applyModifiers(modifiers, {
     transform: {
@@ -272,7 +277,7 @@ export const DndContext = memo(function DndContext({
     over: sensorContext.current.over,
     overlayNodeRect: dragOverlay.rect,
     scrollableAncestors,
-    scrollableAncestorRects,
+    scrollableAncestorRects: scrollableAncestorRectsRects,
     windowRect,
   });
 
@@ -636,7 +641,7 @@ export const DndContext = memo(function DndContext({
       over,
       measureDroppableContainers,
       scrollableAncestors,
-      scrollableAncestorRects,
+      scrollableAncestorRects: scrollableAncestorRectsRects,
       measuringConfiguration,
       measuringScheduled,
       windowRect,

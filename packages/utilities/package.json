@@ -1,5 +1,5 @@
 {
-  "name": "@dnd-kit/utilities",
+  "name": "@lucasols/dnd-kit-utilities",
   "version": "3.2.1",
   "description": "Internal utilities to bee shared between `@dnd-kit` packages",
   "author": "Claudéric Demers",

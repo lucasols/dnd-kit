@@ -9,7 +9,7 @@ import {
   UniqueIdentifier,
   CollisionDetection as CollisionDetectionType,
   Modifiers,
-} from '@dnd-kit/core';
+} from '@lucasols/dnd-kit-core';
 
 import {
   Draggable,

@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import {useDroppable} from '@dnd-kit/core';
+import {useDroppable} from '@lucasols/dnd-kit-core';
 
 import styles from './Cell.module.css';
 

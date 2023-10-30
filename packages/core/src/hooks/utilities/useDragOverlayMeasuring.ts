@@ -1,5 +1,5 @@
 import {useMemo, useCallback, useState} from 'react';
-import {isHTMLElement, useNodeRef} from '@dnd-kit/utilities';
+import {isHTMLElement, useNodeRef} from '@lucasols/dnd-kit-utilities';
 
 import {useResizeObserver} from './useResizeObserver';
 import {getMeasurableNode} from '../../utilities/nodes';

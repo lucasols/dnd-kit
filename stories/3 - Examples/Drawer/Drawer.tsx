@@ -5,8 +5,8 @@ import {
   PointerSensor,
   useSensor,
   useSensors,
-} from '@dnd-kit/core';
-import {restrictToVerticalAxis} from '@dnd-kit/modifiers';
+} from '@lucasols/dnd-kit-core';
+import {restrictToVerticalAxis} from '@lucasols/dnd-kit-modifiers';
 
 import {Region} from './constants';
 import {rubberbandModifier} from './modifiers';

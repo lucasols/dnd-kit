@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {
   verticalListSortingStrategy,
   rectSortingStrategy,
-} from '@dnd-kit/sortable';
+} from '@lucasols/dnd-kit-sortable';
 
 import {Sortable} from '../../../2 - Presets/Sortable/Sortable';
 import {MultipleContainers} from '../../../2 - Presets/Sortable/MultipleContainers';

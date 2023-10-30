@@ -1,5 +1,5 @@
 {
-  "name": "dnd-kit",
+  "name": "dnd-kit-lucasols-fork",
   "description": "dnd kit – a lightweight React library for building performant and accessible drag and drop experiences",
   "author": "Claudéric Demers",
   "license": "MIT",
@@ -19,10 +19,8 @@
     "start:storybook": "start-storybook -p 6006",
     "cypress": "cypress run",
     "cypress:open": "cypress open",
-    "changeset": "changeset",
-    "release": "changeset publish",
-    "version:next": "changeset version --snapshot next",
-    "release:next": "changeset publish --tag next"
+    "bump-version": "lerna version --no-private",
+    "release": "lerna publish --no-private"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.0",

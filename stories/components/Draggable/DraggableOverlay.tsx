@@ -1,8 +1,8 @@
 import React, {ComponentProps} from 'react';
 import {createPortal} from 'react-dom';
-import {DragOverlay, useDndContext} from '@dnd-kit/core';
-import type {DropAnimation} from '@dnd-kit/core';
-import {CSS} from '@dnd-kit/utilities';
+import {DragOverlay, useDndContext} from '@lucasols/dnd-kit-core';
+import type {DropAnimation} from '@lucasols/dnd-kit-core';
+import {CSS} from '@lucasols/dnd-kit-utilities';
 
 import {Draggable} from './Draggable';
 

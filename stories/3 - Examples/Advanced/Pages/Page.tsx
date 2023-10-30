@@ -1,5 +1,5 @@
 import React, {forwardRef, HTMLAttributes} from 'react';
-import type {UniqueIdentifier} from '@dnd-kit/core';
+import type {UniqueIdentifier} from '@lucasols/dnd-kit-core';
 import classNames from 'classnames';
 
 import {removeIcon} from './icons';

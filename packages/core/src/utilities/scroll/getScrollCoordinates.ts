@@ -1,4 +1,4 @@
-import {isWindow} from '@dnd-kit/utilities';
+import {isWindow} from '@lucasols/dnd-kit-utilities';
 
 import type {Coordinates} from '../../types';
 

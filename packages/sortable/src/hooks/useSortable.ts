@@ -4,9 +4,13 @@ import {
   useDroppable,
   UseDraggableArguments,
   UseDroppableArguments,
-} from '@dnd-kit/core';
-import type {Data} from '@dnd-kit/core';
-import {CSS, isKeyboardEvent, useCombinedRefs} from '@dnd-kit/utilities';
+} from '@lucasols/dnd-kit-core';
+import type {Data} from '@lucasols/dnd-kit-core';
+import {
+  CSS,
+  isKeyboardEvent,
+  useCombinedRefs,
+} from '@lucasols/dnd-kit-utilities';
 
 import {Context} from '../components';
 import type {Disabled, SortableData, SortingStrategy} from '../types';

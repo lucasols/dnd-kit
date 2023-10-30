@@ -8,11 +8,11 @@
     "isolatedModules": true,
     "typeRoots": ["./node_modules/@types", "./types"],
     "paths": {
-      "@dnd-kit/core": ["packages/core/src"],
-      "@dnd-kit/accessibility": ["packages/accessibility/src"],
-      "@dnd-kit/modifiers": ["packages/modifiers/src"],
-      "@dnd-kit/sortable": ["packages/sortable/src"],
-      "@dnd-kit/utilities": ["packages/utilities/src"],
+      "@lucasols/dnd-kit-core": ["packages/core/src"],
+      "@lucasols/dnd-kit-accessibility": ["packages/accessibility/src"],
+      "@lucasols/dnd-kit-modifiers": ["packages/modifiers/src"],
+      "@lucasols/dnd-kit-sortable": ["packages/sortable/src"],
+      "@lucasols/dnd-kit-utilities": ["packages/utilities/src"],
       "$test/*": ["test/*"]
     }
   }

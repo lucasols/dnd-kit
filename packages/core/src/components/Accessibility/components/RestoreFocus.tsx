@@ -3,7 +3,7 @@ import {
   findFirstFocusableNode,
   isKeyboardEvent,
   usePrevious,
-} from '@dnd-kit/utilities';
+} from '@lucasols/dnd-kit-utilities';
 
 import {InternalContext} from '../../../store';
 

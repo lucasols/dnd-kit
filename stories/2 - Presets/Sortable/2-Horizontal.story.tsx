@@ -1,11 +1,11 @@
 import React from 'react';
-import {MeasuringStrategy} from '@dnd-kit/core';
+import {MeasuringStrategy} from '@lucasols/dnd-kit-core';
 import {
   AnimateLayoutChanges,
   defaultAnimateLayoutChanges,
   horizontalListSortingStrategy,
-} from '@dnd-kit/sortable';
-import {restrictToHorizontalAxis} from '@dnd-kit/modifiers';
+} from '@lucasols/dnd-kit-sortable';
+import {restrictToHorizontalAxis} from '@lucasols/dnd-kit-modifiers';
 
 import {createRange} from '../../utilities';
 import {List} from '../../components';

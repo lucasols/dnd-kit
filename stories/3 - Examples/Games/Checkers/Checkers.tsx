@@ -6,7 +6,7 @@ import {
   DragEndEvent,
   DragStartEvent,
   DragOverlay,
-} from '@dnd-kit/core';
+} from '@lucasols/dnd-kit-core';
 import {
   Board,
   Cell,
@@ -323,9 +323,10 @@ function generatePieces(board: CellProps[][]) {
   return pieces;
 }
 
-function checkEnd(
-  pieces: (PieceProps | undefined)[][]
-): {oddWon: boolean; evenWon: boolean} {
+function checkEnd(pieces: (PieceProps | undefined)[][]): {
+  oddWon: boolean;
+  evenWon: boolean;
+} {
   const result = {oddWon: true, evenWon: true};
 
   for (let y = 0; y < BOARD_SIZE; y++) {

@@ -9,8 +9,8 @@ import {
   useDroppable,
   UniqueIdentifier,
   DragEndEvent,
-} from '@dnd-kit/core';
-import {CSS} from '@dnd-kit/utilities';
+} from '@lucasols/dnd-kit-core';
+import {CSS} from '@lucasols/dnd-kit-utilities';
 
 const Playground = () => {
   const containers = ['A', 'B', 'C'];
@@ -40,15 +40,10 @@ const Playground = () => {
 };
 
 function Draggable() {
-  const {
-    attributes,
-    isDragging,
-    transform,
-    setNodeRef,
-    listeners,
-  } = useDraggable({
-    id: 'draggable-item',
-  });
+  const {attributes, isDragging, transform, setNodeRef, listeners} =
+    useDraggable({
+      id: 'draggable-item',
+    });
 
   return (
     <button

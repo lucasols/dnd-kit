@@ -1,4 +1,4 @@
-import type {FirstArgument, Transform} from '@dnd-kit/utilities';
+import type {FirstArgument, Transform} from '@lucasols/dnd-kit-utilities';
 
 import type {Modifiers, Modifier} from './types';
 

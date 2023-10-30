@@ -21,7 +21,7 @@ import {
   MeasuringStrategy,
   KeyboardCoordinateGetter,
   defaultDropAnimationSideEffects,
-} from '@dnd-kit/core';
+} from '@lucasols/dnd-kit-core';
 import {
   AnimateLayoutChanges,
   SortableContext,
@@ -31,8 +31,8 @@ import {
   verticalListSortingStrategy,
   SortingStrategy,
   horizontalListSortingStrategy,
-} from '@dnd-kit/sortable';
-import {CSS} from '@dnd-kit/utilities';
+} from '@lucasols/dnd-kit-sortable';
+import {CSS} from '@lucasols/dnd-kit-utilities';
 import {coordinateGetter as multipleContainersCoordinateGetter} from './multipleContainersKeyboardCoordinates';
 
 import {Item, Container, ContainerProps} from '../../components';

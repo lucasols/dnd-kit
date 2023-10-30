@@ -1,5 +1,9 @@
 import {useCallback, useEffect, useMemo, useRef} from 'react';
-import {useInterval, useLazyMemo, usePrevious} from '@dnd-kit/utilities';
+import {
+  useInterval,
+  useLazyMemo,
+  usePrevious,
+} from '@lucasols/dnd-kit-utilities';
 
 import {getScrollDirectionAndSpeed} from '../../utilities';
 import {Direction} from '../../types';
@@ -36,7 +40,7 @@ interface Arguments extends Options {
   enabled: boolean;
   pointerCoordinates: Coordinates | null;
   scrollableAncestors: Element[];
-  scrollableAncestorRects: ClientRect[];
+  scrollableAncestorRects: {rect: ClientRect; element: Element}[];
   delta: Coordinates;
 }
 
@@ -118,8 +122,9 @@ export function useAutoScroller({
           continue;
         }
 
-        const index = scrollableAncestors.indexOf(scrollContainer);
-        const scrollContainerRect = scrollableAncestorRects[index];
+        const scrollContainerRect = scrollableAncestorRects.find(
+          ({element}) => element === scrollContainer
+        )?.rect;
 
         if (!scrollContainerRect) {
           continue;

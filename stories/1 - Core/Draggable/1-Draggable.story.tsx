@@ -9,15 +9,15 @@ import {
   PointerActivationConstraint,
   Modifiers,
   useSensors,
-} from '@dnd-kit/core';
+} from '@lucasols/dnd-kit-core';
 import {
   createSnapModifier,
   restrictToHorizontalAxis,
   restrictToVerticalAxis,
   restrictToWindowEdges,
   snapCenterToCursor,
-} from '@dnd-kit/modifiers';
-import type {Coordinates} from '@dnd-kit/utilities';
+} from '@lucasols/dnd-kit-modifiers';
+import type {Coordinates} from '@lucasols/dnd-kit-utilities';
 
 import {
   Axis,
@@ -112,15 +112,10 @@ function DraggableItem({
   handle,
   buttonStyle,
 }: DraggableItemProps) {
-  const {
-    attributes,
-    isDragging,
-    listeners,
-    setNodeRef,
-    transform,
-  } = useDraggable({
-    id: 'draggable',
-  });
+  const {attributes, isDragging, listeners, setNodeRef, transform} =
+    useDraggable({
+      id: 'draggable',
+    });
 
   return (
     <Draggable

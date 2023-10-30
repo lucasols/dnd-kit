@@ -4,7 +4,7 @@ import {
   getOwnerDocument,
   getWindow,
   isKeyboardEvent,
-} from '@dnd-kit/utilities';
+} from '@lucasols/dnd-kit-utilities';
 
 import type {Coordinates} from '../../types';
 import {

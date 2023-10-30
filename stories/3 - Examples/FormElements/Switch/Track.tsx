@@ -1,5 +1,5 @@
 import React from 'react';
-import {useDroppable} from '@dnd-kit/core';
+import {useDroppable} from '@lucasols/dnd-kit-core';
 
 import {State} from './constants';
 import styles from './Switch.module.css';

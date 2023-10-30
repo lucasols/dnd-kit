@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import {useDraggable} from '@dnd-kit/core';
+import {useDraggable} from '@lucasols/dnd-kit-core';
 
 import {Header} from './Header';
 import {MAX_DRAWER_HEIGHT_PERCENT} from './constants';
@@ -14,15 +14,10 @@ interface Props {
 }
 
 export function Sheet({children, expanded, header}: Props) {
-  const {
-    attributes,
-    isDragging,
-    listeners,
-    transform,
-    setNodeRef,
-  } = useDraggable({
-    id: 'header',
-  });
+  const {attributes, isDragging, listeners, transform, setNodeRef} =
+    useDraggable({
+      id: 'header',
+    });
 
   return (
     <div

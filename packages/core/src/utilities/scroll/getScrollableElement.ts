@@ -5,7 +5,7 @@ import {
   getOwnerDocument,
   isNode,
   isWindow,
-} from '@dnd-kit/utilities';
+} from '@lucasols/dnd-kit-utilities';
 
 export function getScrollableElement(element: EventTarget | null) {
   if (!canUseDOM || !element) {

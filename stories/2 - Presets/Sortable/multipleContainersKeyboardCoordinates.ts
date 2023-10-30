@@ -4,7 +4,7 @@ import {
   KeyboardCode,
   DroppableContainer,
   KeyboardCoordinateGetter,
-} from '@dnd-kit/core';
+} from '@lucasols/dnd-kit-core';
 
 const directions: string[] = [
   KeyboardCode.Down,

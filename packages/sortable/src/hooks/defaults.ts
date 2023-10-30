@@ -1,4 +1,4 @@
-import {CSS} from '@dnd-kit/utilities';
+import {CSS} from '@lucasols/dnd-kit-utilities';
 
 import {arrayMove} from '../utilities';
 

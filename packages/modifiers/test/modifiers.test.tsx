@@ -1,9 +1,9 @@
-import type {Modifier, ClientRect} from '@dnd-kit/core';
-import type {FirstArgument, Transform} from '@dnd-kit/utilities';
+import type {Modifier, ClientRect} from '@lucasols/dnd-kit-core';
+import type {FirstArgument, Transform} from '@lucasols/dnd-kit-utilities';
 
 import {restrictToHorizontalAxis, restrictToVerticalAxis} from '../src';
 
-describe('@dnd-kit/modifiers', () => {
+describe('@lucasols/dnd-kit-modifiers', () => {
   const defaultRect: ClientRect = {
     left: 0,
     right: 0,

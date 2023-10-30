@@ -18,12 +18,12 @@ import {
   Modifier,
   defaultDropAnimation,
   UniqueIdentifier,
-} from '@dnd-kit/core';
+} from '@lucasols/dnd-kit-core';
 import {
   SortableContext,
   arrayMove,
   verticalListSortingStrategy,
-} from '@dnd-kit/sortable';
+} from '@lucasols/dnd-kit-sortable';
 
 import {
   buildTree,
@@ -37,7 +37,7 @@ import {
 import type {FlattenedItem, SensorContext, TreeItems} from './types';
 import {sortableTreeKeyboardCoordinates} from './keyboardCoordinates';
 import {SortableTreeItem} from './components';
-import {CSS} from '@dnd-kit/utilities';
+import {CSS} from '@lucasols/dnd-kit-utilities';
 
 const initialItems: TreeItems = [
   {
@@ -156,9 +156,10 @@ export function SortableTree({
     })
   );
 
-  const sortedIds = useMemo(() => flattenedItems.map(({id}) => id), [
-    flattenedItems,
-  ]);
+  const sortedIds = useMemo(
+    () => flattenedItems.map(({id}) => id),
+    [flattenedItems]
+  );
   const activeItem = activeId
     ? flattenedItems.find(({id}) => id === activeId)
     : null;

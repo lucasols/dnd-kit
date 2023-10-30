@@ -8,11 +8,11 @@ import {
   PointerSensor,
   useSensor,
   useSensors,
-} from '@dnd-kit/core';
+} from '@lucasols/dnd-kit-core';
 import {
   restrictToHorizontalAxis,
   restrictToParentElement,
-} from '@dnd-kit/modifiers';
+} from '@lucasols/dnd-kit-modifiers';
 import classNames from 'classnames';
 
 import {State} from './constants';

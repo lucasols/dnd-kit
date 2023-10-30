@@ -1,12 +1,12 @@
 import React from 'react';
-import {MeasuringStrategy} from '@dnd-kit/core';
+import {MeasuringStrategy} from '@lucasols/dnd-kit-core';
 import {
   arraySwap,
   AnimateLayoutChanges,
   defaultAnimateLayoutChanges,
   rectSortingStrategy,
   rectSwappingStrategy,
-} from '@dnd-kit/sortable';
+} from '@lucasols/dnd-kit-sortable';
 
 import {Sortable, Props as SortableProps} from './Sortable';
 import {GridContainer} from '../../components';

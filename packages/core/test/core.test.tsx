@@ -1,4 +1,4 @@
-describe('@dnd-kit/core', () => {
+describe('@lucasols/dnd-kit-core', () => {
   it('works', () => {
     expect(true).toBe(true);
   });

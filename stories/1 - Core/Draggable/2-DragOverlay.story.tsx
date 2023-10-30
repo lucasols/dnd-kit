@@ -1,11 +1,11 @@
 import React from 'react';
-import {DndContext, useDraggable} from '@dnd-kit/core';
-import type {DropAnimation, Modifiers, Translate} from '@dnd-kit/core';
+import {DndContext, useDraggable} from '@lucasols/dnd-kit-core';
+import type {DropAnimation, Modifiers, Translate} from '@lucasols/dnd-kit-core';
 import {
   restrictToHorizontalAxis,
   restrictToVerticalAxis,
   restrictToWindowEdges,
-} from '@dnd-kit/modifiers';
+} from '@lucasols/dnd-kit-modifiers';
 
 import {Axis, Draggable, DraggableOverlay, Wrapper} from '../../components';
 
