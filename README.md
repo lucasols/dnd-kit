@@ -1,3 +1,6 @@
+> [!WARNING]
+> This a fork for fixing a bug in the original package. As @dnd-kit will be upgraded to a new major version this package will be archirved. Please use the original package!
+
 <p align="center">
   <a href="https://dndkit.com">
     <img alt="@dnd-kit – the modern drag & drop toolkit for React" src=".github/assets/dnd-kit-hero-banner.svg">
