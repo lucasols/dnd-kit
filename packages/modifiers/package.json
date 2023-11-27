@@ -1,6 +1,6 @@
 {
   "name": "@lucasols/dnd-kit-modifiers",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Translate modifier presets for use with `@dnd-kit` packages.",
   "author": "Claudéric Demers",
   "license": "MIT",
@@ -34,7 +34,7 @@
     "react": ">=16.8.0"
   },
   "devDependencies": {
-    "@lucasols/dnd-kit-core": "^0.1.3"
+    "@lucasols/dnd-kit-core": "^0.1.4"
   },
   "publishConfig": {
     "access": "public"
