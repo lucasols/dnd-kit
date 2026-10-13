@@ -6,7 +6,7 @@ export function useDndMonitorProvider() {
   const [listeners] = useState(() => new Set<DndMonitorListener>());
 
   const registerListener = useCallback(
-    (listener) => {
+    (listener: DndMonitorListener) => {
       listeners.add(listener);
       return () => listeners.delete(listener);
     },

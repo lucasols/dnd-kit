@@ -8,7 +8,6 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import {unstable_batchedUpdates} from 'react-dom';
 import {
   add,
   getEventCoordinates,
@@ -367,16 +366,14 @@ export const DndContext = memo(function DndContext({
             active: {id, data: draggableNode.data, rect: activeRects},
           };
 
-          unstable_batchedUpdates(() => {
-            onDragStart?.(event);
-            setStatus(Status.Initializing);
-            dispatch({
-              type: Action.DragStart,
-              initialCoordinates,
-              active: id,
-            });
-            dispatchMonitorEvent({type: 'onDragStart', event});
+          onDragStart?.(event);
+          setStatus(Status.Initializing);
+          dispatch({
+            type: Action.DragStart,
+            initialCoordinates,
+            active: id,
           });
+          dispatchMonitorEvent({type: 'onDragStart', event});
         },
         onMove(coordinates) {
           dispatch({
@@ -388,10 +385,8 @@ export const DndContext = memo(function DndContext({
         onCancel: createHandler(Action.DragCancel),
       });
 
-      unstable_batchedUpdates(() => {
-        setActiveSensor(sensorInstance);
-        setActivatorEvent(event.nativeEvent);
-      });
+      setActiveSensor(sensorInstance);
+      setActivatorEvent(event.nativeEvent);
 
       function createHandler(type: Action.DragEnd | Action.DragCancel) {
         return async function handler() {
@@ -421,23 +416,21 @@ export const DndContext = memo(function DndContext({
 
           activeRef.current = null;
 
-          unstable_batchedUpdates(() => {
-            dispatch({type});
-            setStatus(Status.Uninitialized);
-            setOver(null);
-            setActiveSensor(null);
-            setActivatorEvent(null);
+          dispatch({type});
+          setStatus(Status.Uninitialized);
+          setOver(null);
+          setActiveSensor(null);
+          setActivatorEvent(null);
 
-            const eventName =
-              type === Action.DragEnd ? 'onDragEnd' : 'onDragCancel';
+          const eventName =
+            type === Action.DragEnd ? 'onDragEnd' : 'onDragCancel';
 
-            if (event) {
-              const handler = latestProps.current[eventName];
+          if (event) {
+            const handler = latestProps.current[eventName];
 
-              handler?.(event);
-              dispatchMonitorEvent({type: eventName, event});
-            }
-          });
+            handler?.(event);
+            dispatchMonitorEvent({type: eventName, event});
+          }
         };
       }
     },
@@ -521,10 +514,8 @@ export const DndContext = memo(function DndContext({
         over,
       };
 
-      unstable_batchedUpdates(() => {
-        onDragMove?.(event);
-        dispatchMonitorEvent({type: 'onDragMove', event});
-      });
+      onDragMove?.(event);
+      dispatchMonitorEvent({type: 'onDragMove', event});
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [scrollAdjustedTranslate.x, scrollAdjustedTranslate.y]
@@ -571,11 +562,9 @@ export const DndContext = memo(function DndContext({
         over,
       };
 
-      unstable_batchedUpdates(() => {
-        setOver(over);
-        onDragOver?.(event);
-        dispatchMonitorEvent({type: 'onDragOver', event});
-      });
+      setOver(over);
+      onDragOver?.(event);
+      dispatchMonitorEvent({type: 'onDragOver', event});
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [overId]

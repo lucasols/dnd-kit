@@ -105,13 +105,17 @@ export function useDraggable({
     ]
   );
 
+  const draggableListeners: DraggableSyntheticListeners = disabled
+    ? undefined
+    : listeners;
+
   return {
     active,
     activatorEvent,
     activeNodeRect,
     attributes: memoizedAttributes,
     isDragging,
-    listeners: disabled ? undefined : listeners,
+    listeners: draggableListeners,
     node,
     over,
     setNodeRef,

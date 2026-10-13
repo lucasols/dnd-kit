@@ -19,7 +19,7 @@ const visuallyHidden: React.CSSProperties = {
   whiteSpace: 'nowrap',
 };
 
-export function LiveRegion({id, announcement}: Props) {
+export function LiveRegion({id, announcement}: Props): React.JSX.Element {
   return (
     <div
       id={id}

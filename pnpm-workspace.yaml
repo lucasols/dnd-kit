@@ -1,0 +1,7 @@
+packages:
+  - packages/*
+allowBuilds:
+  core-js: false
+  core-js-pure: false
+  cypress: false
+  fsevents: false

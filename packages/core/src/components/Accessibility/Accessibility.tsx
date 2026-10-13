@@ -1,7 +1,11 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import {createPortal} from 'react-dom';
 import {useUniqueId} from '@lucasols/dnd-kit-utilities';
-import {HiddenText, LiveRegion, useAnnouncement} from '@lucasols/dnd-kit-accessibility';
+import {
+  HiddenText,
+  LiveRegion,
+  useAnnouncement,
+} from '@lucasols/dnd-kit-accessibility';
 
 import {DndMonitorListener, useDndMonitor} from '../DndMonitor';
 
@@ -23,7 +27,7 @@ export function Accessibility({
   container,
   hiddenTextDescribedById,
   screenReaderInstructions = defaultScreenReaderInstructions,
-}: Props) {
+}: Props): React.JSX.Element | null {
   const {announce, announcement} = useAnnouncement();
   const liveRegionId = useUniqueId(`DndLiveRegion`);
   const [mounted, setMounted] = useState(false);

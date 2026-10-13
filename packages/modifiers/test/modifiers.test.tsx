@@ -1,3 +1,4 @@
+import {describe, expect, it} from 'vitest';
 import type {Modifier, ClientRect} from '@lucasols/dnd-kit-core';
 import type {FirstArgument, Transform} from '@lucasols/dnd-kit-utilities';
 

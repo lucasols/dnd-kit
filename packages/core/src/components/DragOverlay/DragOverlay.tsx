@@ -22,7 +22,7 @@ export interface Props
   > {
   dropAnimation?: DropAnimation | null | undefined;
   modifiers?: Modifiers;
-  wrapperElement?: keyof JSX.IntrinsicElements;
+  wrapperElement?: keyof React.JSX.IntrinsicElements;
   zIndex?: number;
 }
 
@@ -37,7 +37,7 @@ export const DragOverlay = React.memo(
     wrapperElement = 'div',
     className,
     zIndex = 999,
-  }: Props) => {
+  }: Props): React.JSX.Element => {
     const {
       activatorEvent,
       active,

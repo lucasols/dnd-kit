@@ -11,7 +11,7 @@ type TransitionGetter = (
 ) => React.CSSProperties['transition'] | undefined;
 
 export interface Props {
-  as: keyof JSX.IntrinsicElements;
+  as: keyof React.JSX.IntrinsicElements;
   activatorEvent: Event | null;
   adjustScale?: boolean;
   children?: React.ReactNode;

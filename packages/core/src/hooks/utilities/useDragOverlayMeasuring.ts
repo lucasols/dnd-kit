@@ -33,7 +33,7 @@ export function useDragOverlayMeasuring({
   );
   const resizeObserver = useResizeObserver({callback: handleResize});
   const handleNodeChange = useCallback(
-    (element) => {
+    (element: HTMLElement | null) => {
       const node = getMeasurableNode(element);
 
       resizeObserver?.disconnect();

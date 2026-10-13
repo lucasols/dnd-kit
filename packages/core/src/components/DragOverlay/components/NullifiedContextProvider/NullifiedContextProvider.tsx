@@ -15,7 +15,7 @@ const defaultTransform: Transform = {
   scaleY: 1,
 };
 
-export function NullifiedContextProvider({children}: Props) {
+export function NullifiedContextProvider({children}: Props): React.JSX.Element {
   return (
     <InternalContext.Provider value={defaultInternalContext}>
       <ActiveDraggableContext.Provider value={defaultTransform}>

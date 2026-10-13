@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "react", "vitest"],
+  "categories": {
+    "correctness": "error"
+  },
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/refs": "off",
+    "react/purity": "off",
+    "react/immutability": "off",
+    "react/set-state-in-effect": "off",
+    "typescript/no-wrapper-object-types": "off"
+  },
+  "ignorePatterns": ["**/dist/**", "playground/**", "storybook-static/**"]
+}

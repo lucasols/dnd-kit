@@ -48,7 +48,6 @@ export class KeyboardSensor implements SensorInstance {
       event: {target},
     } = props;
 
-    this.props = props;
     this.listeners = new Listeners(getOwnerDocument(target));
     this.windowListeners = new Listeners(getWindow(target));
     this.handleKeyDown = this.handleKeyDown.bind(this);

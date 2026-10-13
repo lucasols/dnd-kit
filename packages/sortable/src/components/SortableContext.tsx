@@ -56,7 +56,7 @@ export function SortableContext({
   items: userDefinedItems,
   strategy = rectSortingStrategy,
   disabled: disabledProp = false,
-}: Props) {
+}: Props): React.JSX.Element {
   const {
     active,
     dragOverlay,

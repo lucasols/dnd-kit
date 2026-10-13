@@ -10,15 +10,22 @@
     "directory": "packages/core"
   },
   "scripts": {
-    "start": "tsdx watch --tsconfig tsconfig.build.json --verbose --noClean",
-    "build": "tsdx build --tsconfig tsconfig.build.json",
-    "test": "tsdx test",
-    "lint": "tsdx lint",
-    "prepublish": "npm run build"
+    "start": "tsdown --config ../../tsdown.config.mts --watch",
+    "build": "tsdown --config ../../tsdown.config.mts",
+    "test": "vitest run --config ../../vitest.config.mts",
+    "prepublishOnly": "pnpm run build"
   },
-  "main": "dist/index.js",
-  "module": "dist/dnd-kit-core.esm.js",
-  "typings": "dist/index.d.ts",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
   "files": [
     "README.md",
     "CHANGELOG.md",
@@ -26,13 +33,12 @@
     "dist"
   ],
   "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "dependencies": {
-    "@lucasols/dnd-kit-accessibility": "^0.1.3",
-    "@lucasols/dnd-kit-utilities": "^0.1.3",
-    "tslib": "^2.0.0"
+    "@lucasols/dnd-kit-accessibility": "workspace:^",
+    "@lucasols/dnd-kit-utilities": "workspace:^"
   },
   "publishConfig": {
     "access": "public"

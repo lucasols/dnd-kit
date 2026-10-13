@@ -11,14 +11,23 @@ export type Animation = (
   node: HTMLElement
 ) => Promise<void> | void;
 
+type AnimatedElement = React.ReactElement<{
+  id: UniqueIdentifier;
+  ref?: React.Ref<HTMLElement>;
+}>;
+
 export interface Props {
   animation: Animation;
-  children: React.ReactElement | null;
+  children: AnimatedElement | null;
 }
 
-export function AnimationManager({animation, children}: Props) {
-  const [clonedChildren, setClonedChildren] =
-    useState<React.ReactElement | null>(null);
+export function AnimationManager({
+  animation,
+  children,
+}: Props): React.JSX.Element {
+  const [clonedChildren, setClonedChildren] = useState<AnimatedElement | null>(
+    null
+  );
   const [element, setElement] = useState<HTMLElement | null>(null);
   const previousChildren = usePrevious(children);
 

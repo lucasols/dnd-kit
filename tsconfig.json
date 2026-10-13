@@ -3,17 +3,15 @@
   "include": ["packages", "types", "scripts", "playground", "stories"],
   "compilerOptions": {
     "allowJs": false,
-    "baseUrl": ".",
-    "importsNotUsedAsValues": "error",
     "isolatedModules": true,
     "typeRoots": ["./node_modules/@types", "./types"],
     "paths": {
-      "@lucasols/dnd-kit-core": ["packages/core/src"],
-      "@lucasols/dnd-kit-accessibility": ["packages/accessibility/src"],
-      "@lucasols/dnd-kit-modifiers": ["packages/modifiers/src"],
-      "@lucasols/dnd-kit-sortable": ["packages/sortable/src"],
-      "@lucasols/dnd-kit-utilities": ["packages/utilities/src"],
-      "$test/*": ["test/*"]
+      "@lucasols/dnd-kit-core": ["./packages/core/src"],
+      "@lucasols/dnd-kit-accessibility": ["./packages/accessibility/src"],
+      "@lucasols/dnd-kit-modifiers": ["./packages/modifiers/src"],
+      "@lucasols/dnd-kit-sortable": ["./packages/sortable/src"],
+      "@lucasols/dnd-kit-utilities": ["./packages/utilities/src"],
+      "$test/*": ["./test/*"]
     }
   }
 }

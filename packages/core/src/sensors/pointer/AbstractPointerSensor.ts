@@ -63,7 +63,7 @@ export class AbstractPointerSensor implements SensorInstance {
   private document: Document;
   private activated: boolean = false;
   private initialCoordinates: Coordinates;
-  private timeoutId: NodeJS.Timeout | null = null;
+  private timeoutId: ReturnType<typeof setTimeout> | null = null;
   private listeners: Listeners;
   private documentListeners: Listeners;
   private windowListeners: Listeners;
@@ -76,8 +76,6 @@ export class AbstractPointerSensor implements SensorInstance {
     const {event} = props;
     const {target} = event;
 
-    this.props = props;
-    this.events = events;
     this.document = getOwnerDocument(target);
     this.documentListeners = new Listeners(this.document);
     this.listeners = new Listeners(listenerTarget);

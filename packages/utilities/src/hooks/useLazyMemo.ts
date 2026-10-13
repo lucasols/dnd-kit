@@ -4,7 +4,7 @@ export function useLazyMemo<T>(
   callback: (prevValue: T | undefined) => T,
   dependencies: any[]
 ) {
-  const valueRef = useRef<T>();
+  const valueRef = useRef<T | undefined>(undefined);
 
   return useMemo(
     () => {
