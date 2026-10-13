@@ -4,7 +4,7 @@ type AnyFunction = (...args: any) => any;
 
 export function useInitialValue<
   T,
-  U extends AnyFunction | undefined = undefined
+  U extends AnyFunction | undefined = undefined,
 >(
   value: T | null,
   computeFn?: U

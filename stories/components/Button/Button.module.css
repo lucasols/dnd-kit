@@ -9,7 +9,9 @@
   cursor: pointer;
   outline: none;
   transform: scale(1);
-  transition: transform 0.2s, background 0.4s;
+  transition:
+    transform 0.2s,
+    background 0.4s;
 
   &:hover,
   &:focus {

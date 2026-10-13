@@ -9,7 +9,7 @@ import type {
 import type {SortableData} from './data';
 
 export function hasSortableData<
-  T extends Active | Over | DraggableNode | DroppableContainer
+  T extends Active | Over | DraggableNode | DroppableContainer,
 >(
   entry: T | null | undefined
 ): entry is T & {data: {current: Data<SortableData>}} {

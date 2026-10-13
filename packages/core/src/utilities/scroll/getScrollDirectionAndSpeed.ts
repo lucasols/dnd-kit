@@ -1,8 +1,10 @@
 import {Direction, ClientRect} from '../../types';
 import {getScrollPosition} from './getScrollPosition';
 
-interface PositionalCoordinates
-  extends Pick<ClientRect, 'top' | 'left' | 'right' | 'bottom'> {}
+interface PositionalCoordinates extends Pick<
+  ClientRect,
+  'top' | 'left' | 'right' | 'bottom'
+> {}
 
 const defaultThreshold = {
   x: 0.2,

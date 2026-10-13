@@ -1,5 +1,5 @@
 ---
-"@dnd-kit/utilities": patch
+'@dnd-kit/utilities': patch
 ---
 
 Fix: getOwnerDocument should get correct document for SVG Elements

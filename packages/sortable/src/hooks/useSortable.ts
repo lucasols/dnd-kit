@@ -31,7 +31,8 @@ import type {
 import {useDerivedTransform} from './utilities';
 
 export interface Arguments
-  extends Omit<UseDraggableArguments, 'disabled'>,
+  extends
+    Omit<UseDraggableArguments, 'disabled'>,
     Pick<UseDroppableArguments, 'resizeObserverConfig'> {
   animateLayoutChanges?: AnimateLayoutChanges;
   disabled?: boolean | Disabled;
@@ -121,14 +122,14 @@ export function useSortable({
     shouldDisplaceDragSource && displaceItem ? transform : null;
   const strategy = localStrategy ?? globalStrategy;
   const finalTransform = displaceItem
-    ? dragSourceDisplacement ??
+    ? (dragSourceDisplacement ??
       strategy({
         rects: sortedRects,
         activeNodeRect,
         activeIndex,
         overIndex,
         index,
-      })
+      }))
     : null;
   const newIndex =
     isValidIndex(activeIndex) && isValidIndex(overIndex)

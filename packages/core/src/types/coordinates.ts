@@ -3,10 +3,7 @@ import type {Coordinates} from '@lucasols/dnd-kit-utilities';
 export type {Coordinates};
 
 export type DistanceMeasurement =
-  | number
-  | Coordinates
-  | Pick<Coordinates, 'x'>
-  | Pick<Coordinates, 'y'>;
+  number | Coordinates | Pick<Coordinates, 'x'> | Pick<Coordinates, 'y'>;
 
 export type Translate = Coordinates;
 

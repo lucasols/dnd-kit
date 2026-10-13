@@ -66,7 +66,7 @@ export function useScrollOffsets(elements: Element[]): Coordinates {
             entry
           ): entry is [
             HTMLElement | (Window & typeof globalThis),
-            Coordinates
+            Coordinates,
           ] => entry != null
         );
 

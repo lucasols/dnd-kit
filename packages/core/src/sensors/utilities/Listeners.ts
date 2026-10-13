@@ -2,7 +2,7 @@ export class Listeners {
   private listeners: [
     string,
     EventListenerOrEventListenerObject,
-    AddEventListenerOptions | boolean | undefined
+    AddEventListenerOptions | boolean | undefined,
   ][] = [];
 
   constructor(private target: EventTarget | null) {}

@@ -15,11 +15,10 @@ import type {PositionedOverlayProps} from './components';
 import {useDropAnimation, useKey} from './hooks';
 import type {DropAnimation} from './hooks';
 
-export interface Props
-  extends Pick<
-    PositionedOverlayProps,
-    'adjustScale' | 'children' | 'className' | 'style' | 'transition'
-  > {
+export interface Props extends Pick<
+  PositionedOverlayProps,
+  'adjustScale' | 'children' | 'className' | 'style' | 'transition'
+> {
   dropAnimation?: DropAnimation | null | undefined;
   modifiers?: Modifiers;
   wrapperElement?: keyof React.JSX.IntrinsicElements;
