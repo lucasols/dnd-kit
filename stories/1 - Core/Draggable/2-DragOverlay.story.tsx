@@ -10,7 +10,7 @@ import {
 import {Axis, Draggable, DraggableOverlay, Wrapper} from '../../components';
 
 export default {
-  title: `Core/Draggable/Components/\u003CDragOverlay\u003E`,
+  title: 'Core/Draggable/Components/<DragOverlay>',
 };
 
 interface Props {

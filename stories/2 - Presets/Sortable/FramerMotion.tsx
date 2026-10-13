@@ -103,9 +103,6 @@ function Item({id}: {id: UniqueIdentifier}) {
       }
       transition={{
         duration: !isDragging ? 0.25 : 0,
-        easings: {
-          type: 'spring',
-        },
         scale: {
           duration: 0.25,
         },

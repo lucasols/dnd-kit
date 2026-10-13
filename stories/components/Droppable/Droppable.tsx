@@ -23,7 +23,7 @@ export function Droppable({children, id, dragging}: Props) {
         styles.Droppable,
         isOver && styles.over,
         dragging && styles.dragging,
-        children && styles.dropped
+        Boolean(children) && styles.dropped
       )}
       aria-label="Droppable region"
     >

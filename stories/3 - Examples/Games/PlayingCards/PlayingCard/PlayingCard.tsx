@@ -26,7 +26,7 @@ export const PlayingCard = forwardRef<HTMLDivElement, Props>(
     {
       value,
       isDragging,
-      isSorting,
+      isSorting: _isSorting,
       mountAnimation,
       fadeIn,
       isPickedUp,

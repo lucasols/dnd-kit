@@ -21,7 +21,7 @@ export interface Props {
   onRemove?(): void;
 }
 
-export const Container = forwardRef<HTMLDivElement, Props>(
+export const Container = forwardRef<HTMLElement, Props>(
   (
     {
       children,
@@ -46,7 +46,14 @@ export const Container = forwardRef<HTMLDivElement, Props>(
     return (
       <Component
         {...props}
-        ref={ref}
+        // A callback ref fits both the <button> and <div> variants
+        ref={(element: HTMLElement | null) => {
+          if (typeof ref === 'function') {
+            ref(element);
+          } else if (ref) {
+            ref.current = element;
+          }
+        }}
         style={
           {
             ...style,

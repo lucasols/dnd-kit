@@ -5,17 +5,17 @@ declare namespace Cypress {
     /**
      * Visit a Storybook story
      */
-    visitStory(id: string): Chainable<Window>;
+    visitStory(id: string): Chainable<AUTWindow>;
 
     /**
      * Find the first draggable item in the document.
      */
-    findFirstDraggableItem(): Chainable<Element>;
+    findFirstDraggableItem(): Chainable<JQuery<HTMLElement>>;
 
     /**
      * Find a draggable handle within an item.
      */
-    findDraggableHandle(): Chainable<Element>;
+    findDraggableHandle(): Chainable<JQuery<HTMLElement>>;
 
     /**
      * Move a draggable element by the specified number of pixels.
@@ -43,7 +43,7 @@ declare namespace Cypress {
     /**
      * Find a draggable element node by id
      */
-    findItemById(id: string): Chainable<Element>;
+    findItemById(id: string): Chainable<JQuery<HTMLElement>>;
 
     /**
      * Get the index for a given sortable element

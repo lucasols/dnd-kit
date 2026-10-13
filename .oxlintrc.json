@@ -11,7 +11,8 @@
     "react/purity": "off",
     "react/immutability": "off",
     "react/set-state-in-effect": "off",
-    "typescript/no-wrapper-object-types": "off"
+    "typescript/no-wrapper-object-types": "off",
+    "react/incompatible-library": "off"
   },
   "ignorePatterns": ["**/dist/**", "playground/**", "storybook-static/**"]
 }

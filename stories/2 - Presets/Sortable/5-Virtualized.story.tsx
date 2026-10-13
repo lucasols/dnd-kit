@@ -1,6 +1,10 @@
-import React, {useState} from 'react';
+import React, {useCallback, useRef, useState} from 'react';
 import {createPortal} from 'react-dom';
-import VirtualList from 'react-tiny-virtual-list';
+import {
+  defaultRangeExtractor,
+  useVirtualizer,
+  type Range,
+} from '@tanstack/react-virtual';
 
 import {
   closestCenter,
@@ -51,6 +55,26 @@ function Sortable({
   );
   const getIndex = (id: UniqueIdentifier) => items.indexOf(id);
   const activeIndex = activeId ? getIndex(activeId) : -1;
+  const scrollElementRef = useRef<HTMLDivElement>(null);
+  const virtualizer = useVirtualizer({
+    count: items.length,
+    getScrollElement: () => scrollElementRef.current,
+    estimateSize: () => 64,
+    overscan: 3,
+    // Keep the active item mounted while it is scrolled out of view
+    rangeExtractor: useCallback(
+      (range: Range) => {
+        const indexes = defaultRangeExtractor(range);
+
+        if (activeIndex !== -1 && !indexes.includes(activeIndex)) {
+          return [...indexes, activeIndex].sort((a, b) => a - b);
+        }
+
+        return indexes;
+      },
+      [activeIndex]
+    ),
+  });
 
   return (
     <DndContext
@@ -74,32 +98,42 @@ function Sortable({
     >
       <Wrapper center>
         <SortableContext items={items} strategy={strategy}>
-          <VirtualList
-            width={500}
-            height={600}
+          <div
+            ref={scrollElementRef}
             className={styles.VirtualList}
-            itemCount={items.length}
-            itemSize={64}
-            stickyIndices={activeId ? [items.indexOf(activeId)] : undefined}
-            renderItem={({index, style}) => {
-              const id = items[index];
+            style={{width: 500, height: 600, overflow: 'auto'}}
+          >
+            <div
+              style={{
+                position: 'relative',
+                width: '100%',
+                height: virtualizer.getTotalSize(),
+              }}
+            >
+              {virtualizer.getVirtualItems().map(({index, start, size}) => {
+                const id = items[index];
 
-              return (
-                <SortableItem
-                  key={id}
-                  id={id}
-                  index={index}
-                  handle={handle}
-                  wrapperStyle={() => ({
-                    ...style,
-                    padding: 5,
-                  })}
-                  style={getItemStyles}
-                  useDragOverlay
-                />
-              );
-            }}
-          />
+                return (
+                  <SortableItem
+                    key={id}
+                    id={id}
+                    index={index}
+                    handle={handle}
+                    wrapperStyle={() => ({
+                      position: 'absolute',
+                      top: start,
+                      left: 0,
+                      width: '100%',
+                      height: size,
+                      padding: 5,
+                    })}
+                    style={getItemStyles}
+                    useDragOverlay
+                  />
+                );
+              })}
+            </div>
+          </div>
         </SortableContext>
       </Wrapper>
       {createPortal(

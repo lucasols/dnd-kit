@@ -6,6 +6,7 @@ import {
   getClientRect,
   MeasuringConfiguration,
   PointerSensor,
+  UniqueIdentifier,
   useSensor,
   useSensors,
 } from '@lucasols/dnd-kit-core';
@@ -44,7 +45,7 @@ export function Switch({
   checked,
   onChange,
 }: Props) {
-  const [overId, setOverId] = useState<string | null>(null);
+  const [overId, setOverId] = useState<UniqueIdentifier | null>(null);
   const sensors = useSensors(
     useSensor(PointerSensor, {
       activationConstraint: {

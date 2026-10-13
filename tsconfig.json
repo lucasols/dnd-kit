@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.build.json",
-  "include": ["packages", "types", "scripts", "playground", "stories"],
+  "include": ["packages", "types", "stories", ".storybook"],
   "compilerOptions": {
     "allowJs": false,
     "isolatedModules": true,

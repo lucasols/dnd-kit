@@ -1,5 +1,3 @@
-/// <reference path="../support/index.d.ts" />
-
 function getIdForIndex(index: number) {
   return `${index + 1}`;
 }

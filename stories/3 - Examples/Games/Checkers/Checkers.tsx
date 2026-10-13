@@ -1,5 +1,5 @@
 import React, {useCallback, useMemo, useState} from 'react';
-import {AnimateSharedLayout} from 'framer-motion';
+import {LayoutGroup} from 'framer-motion';
 import {
   DndContext,
   useDraggable,
@@ -178,7 +178,7 @@ export function Checkers() {
   const gameEnded = evenWon || oddWon;
 
   return (
-    <AnimateSharedLayout type="crossfade">
+    <LayoutGroup>
       <DndContext
         onDragStart={handleDragStart}
         onDragEnd={handleDragEnd}
@@ -248,7 +248,7 @@ export function Checkers() {
           )}
         </DragOverlay>
       </DndContext>
-    </AnimateSharedLayout>
+    </LayoutGroup>
   );
 
   function handleRestart() {

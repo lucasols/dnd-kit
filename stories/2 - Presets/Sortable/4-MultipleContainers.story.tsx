@@ -28,7 +28,9 @@ export const Vertical = () => <MultipleContainers itemCount={5} vertical />;
 
 export const TrashableItems = ({confirmDrop}: {confirmDrop: boolean}) => {
   const [activeId, setActiveId] = React.useState<UniqueIdentifier | null>(null);
-  const resolveRef = React.useRef<(value: boolean) => void>();
+  const resolveRef = React.useRef<((value: boolean) => void) | undefined>(
+    undefined
+  );
 
   const cancelDrop: CancelDrop = async ({active, over}) => {
     if (over?.id !== TRASH_ID) {

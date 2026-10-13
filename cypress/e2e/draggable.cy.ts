@@ -1,5 +1,3 @@
-/// <reference path="../support/index.d.ts" />
-
 describe('Draggable', () => {
   describe('Basic setup', () => {
     it('Move item', () => {

@@ -4,7 +4,14 @@ import classNames from 'classnames';
 
 import styles from './Piece.module.css';
 
-export interface Props extends React.HTMLAttributes<HTMLElement> {
+// framer-motion redefines these handlers with incompatible signatures
+type MotionConflictingProps =
+  'onAnimationStart' | 'onDrag' | 'onDragStart' | 'onDragEnd';
+
+export interface Props extends Omit<
+  React.HTMLAttributes<HTMLButtonElement>,
+  MotionConflictingProps
+> {
   id: string;
   odd: boolean;
   clone?: boolean;
@@ -12,7 +19,7 @@ export interface Props extends React.HTMLAttributes<HTMLElement> {
   disabled?: boolean;
 }
 
-export const Piece = forwardRef<HTMLElement, Props>(function Piece(
+export const Piece = forwardRef<HTMLButtonElement, Props>(function Piece(
   {clone, disabled, id, odd, position, ...props},
   ref
 ) {

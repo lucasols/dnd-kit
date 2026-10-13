@@ -51,7 +51,7 @@ export const Item = React.memo(
         fadeIn,
         handle,
         handleProps,
-        height,
+        height: _height,
         index,
         listeners,
         onRemove,
