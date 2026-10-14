@@ -1,4 +1,4 @@
-import {useReducer} from 'react';
+import {useState} from 'react';
 import {useIsomorphicLayoutEffect} from '@lucasols/dnd-kit-utilities';
 
 import type {ClientRect} from '../../types';
@@ -16,7 +16,29 @@ export function useRect(
   measure: (element: HTMLElement) => ClientRect = defaultMeasure,
   fallbackRect?: ClientRect | null
 ) {
-  const [rect, measureRect] = useReducer(reducer, null);
+  const [rect, setRect] = useState<ClientRect | null>(null);
+
+  function measureRect() {
+    setRect((currentRect) => {
+      if (!element) {
+        return null;
+      }
+
+      if (element.isConnected === false) {
+        // Fall back to last rect we measured if the element is
+        // no longer connected to the DOM.
+        return currentRect ?? fallbackRect ?? null;
+      }
+
+      const newRect = measure(element);
+
+      if (JSON.stringify(currentRect) === JSON.stringify(newRect)) {
+        return currentRect;
+      }
+
+      return newRect;
+    });
+  }
 
   const mutationObserver = useMutationObserver({
     callback(records) {
@@ -56,24 +78,4 @@ export function useRect(
   }, [element]);
 
   return rect;
-
-  function reducer(currentRect: ClientRect | null) {
-    if (!element) {
-      return null;
-    }
-
-    if (element.isConnected === false) {
-      // Fall back to last rect we measured if the element is
-      // no longer connected to the DOM.
-      return currentRect ?? fallbackRect ?? null;
-    }
-
-    const newRect = measure(element);
-
-    if (JSON.stringify(currentRect) === JSON.stringify(newRect)) {
-      return currentRect;
-    }
-
-    return newRect;
-  }
 }

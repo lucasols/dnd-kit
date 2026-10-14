@@ -1,6 +1,5 @@
 import {useCallback, useContext, useEffect, useRef} from 'react';
 import {
-  useIsomorphicLayoutEffect,
   useLatestValue,
   useNodeRef,
   useUniqueId,
@@ -115,7 +114,7 @@ export function useDroppable({
     resizeObserver.observe(nodeRef.current);
   }, [nodeRef, resizeObserver]);
 
-  useIsomorphicLayoutEffect(
+  useEffect(
     () => {
       dispatch({
         type: Action.RegisterDroppable,

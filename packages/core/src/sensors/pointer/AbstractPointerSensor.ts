@@ -32,6 +32,7 @@ interface EventDescriptor {
 }
 
 export interface PointerEventHandlers {
+  cancel?: EventDescriptor;
   move: EventDescriptor;
   end: EventDescriptor;
 }
@@ -101,6 +102,11 @@ export class AbstractPointerSensor implements SensorInstance {
 
     this.listeners.add(events.move.name, this.handleMove, {passive: false});
     this.listeners.add(events.end.name, this.handleEnd);
+
+    if (events.cancel) {
+      this.listeners.add(events.cancel.name, this.handleCancel);
+    }
+
     this.windowListeners.add(EventName.Resize, this.handleCancel);
     this.windowListeners.add(EventName.DragStart, preventDefault);
     this.windowListeners.add(EventName.VisibilityChange, this.handleCancel);
